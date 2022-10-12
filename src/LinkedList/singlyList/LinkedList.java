@@ -56,17 +56,17 @@ public class LinkedList {
     }
 
     public void addAtGivenPosition(int pos, int data) {
-        System.out.println("Add at given Position");
+        System.out.println("Add at given Position " + pos);
         Node node = new Node(data);
         Node current = head;
-        int count = 0;
+        int count = 1;
         while (count < pos - 1) {
-            System.out.println(current.data);
             count++;
             current = current.next;
-
         }
-        System.out.println(count);
+        node.next = current.next;
+        current.next = node;
+        printList();
     }
 
     private static class Node {
