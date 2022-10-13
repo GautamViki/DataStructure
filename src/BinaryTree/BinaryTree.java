@@ -103,6 +103,20 @@ public class BinaryTree {
         System.out.print(root.data + " ");
     }
 
+    public void postOrderIteratively(TreeNode root) {
+        if (root == null) return;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode current = root;
+        while (!stack.isEmpty() || current != null) {
+            if (current != null) {
+                stack.push(current);
+                current = current.left;
+            } else {
+
+            }
+        }
+    }
+
     private class TreeNode {
         private TreeNode left;
         private TreeNode right;
