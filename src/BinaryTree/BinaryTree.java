@@ -13,6 +13,7 @@ public class BinaryTree {
         binaryTree.preOrderTraverseIteratively(binaryTree.root);
         System.out.println("\nInOrder Traverse Recursive way");
         binaryTree.inOrderTraverseRecursively(binaryTree.root);
+        binaryTree.inOrderTraverseIteratively(binaryTree.root);
     }
 
     public void createTree() {
@@ -62,6 +63,23 @@ public class BinaryTree {
         inOrderTraverseRecursively(root.left);
         System.out.print(root.data + " ");
         inOrderTraverseRecursively(root.right);
+    }
+
+    public void inOrderTraverseIteratively(TreeNode root) {
+        System.out.println("\nInOrder Traverse Iterative way");
+        if (root == null) return;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode temp = root;
+        while (!stack.isEmpty() || temp != null) {
+            if (temp != null) {
+                stack.push(temp);
+                temp = temp.left;
+            } else {
+                temp = stack.pop();
+                System.out.print(temp.data + " ");
+                temp = temp.right;
+            }
+        }
     }
 
     private class TreeNode {
