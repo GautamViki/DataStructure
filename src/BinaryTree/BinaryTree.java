@@ -34,6 +34,10 @@ public class BinaryTree {
         node2.right = node6;
     }
 
+    //PreOrder Traversal
+    //    Visit root node
+    //    Traverse the left subTree
+    //    Traverse the right subTree
     public void preOrderTraverseRecursively(TreeNode root) {
         if (root == null) return;
         System.out.print(root.data + " ");
@@ -58,6 +62,10 @@ public class BinaryTree {
         }
     }
 
+    //IreOrder Traversal
+    //    Traverse the left subTree
+    //    Visit root node
+    //    Traverse the right subTree
     public void inOrderTraverseRecursively(TreeNode root) {
         if (root == null) return;
         inOrderTraverseRecursively(root.left);
