@@ -14,6 +14,8 @@ public class BinaryTree {
         System.out.println("\nInOrder Traverse Recursive way");
         binaryTree.inOrderTraverseRecursively(binaryTree.root);
         binaryTree.inOrderTraverseIteratively(binaryTree.root);
+        System.out.println("\nPostOrder Traverse Recursive way");
+        binaryTree.postOrderRecursively(binaryTree.root);
     }
 
     public void createTree() {
@@ -94,6 +96,13 @@ public class BinaryTree {
     //    Traverse the left subTree
     //    Traverse the right subTree
     //    Visit root node
+    public void postOrderRecursively(TreeNode root) {
+        if (root == null) return;
+        postOrderRecursively(root.left);
+        postOrderRecursively(root.right);
+        System.out.print(root.data + " ");
+    }
+
     private class TreeNode {
         private TreeNode left;
         private TreeNode right;
