@@ -90,6 +90,10 @@ public class BinaryTree {
         }
     }
 
+    //PostOrder Traversal
+    //    Traverse the left subTree
+    //    Traverse the right subTree
+    //    Visit root node
     private class TreeNode {
         private TreeNode left;
         private TreeNode right;
