@@ -23,6 +23,7 @@ public class LinkedList {
         linkedList.addAtFirst(100);
         linkedList.addAtLast(200);
         linkedList.addAtGivenPosition(3, 300);
+        linkedList.addAtKthPositionFromLast(2, 400);
     }
 
     public void printList() {
@@ -34,6 +35,16 @@ public class LinkedList {
         }
         System.out.println("null");
         System.out.println();
+    }
+
+    public int getSize() {
+        Node current = head;
+        int size = 0;
+        while (current != null) {
+            size++;
+            current = current.next;
+        }
+        return size;
     }
 
     public void addAtFirst(int data) {
@@ -68,6 +79,23 @@ public class LinkedList {
         current.next = node;
         printList();
     }
+
+    public void addAtKthPositionFromLast(int fromLast, int data) {
+        System.out.println("Add at " + fromLast + " from Last position");
+        int size = getSize();
+        Node current = head;
+        int pos = size - fromLast;
+        int count = 1;
+        while (count < pos + 1) {
+            count++;
+            current = current.next;
+        }
+        Node node = new Node(data);
+        node.next = current.next;
+        current.next = node;
+        printList();
+    }
+    
 
     private static class Node {
         private int data;
