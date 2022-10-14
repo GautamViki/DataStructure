@@ -20,6 +20,7 @@ public class BinaryTree {
         binaryTree.postOrderRecursively(binaryTree.root);
         binaryTree.postOrderIteratively(binaryTree.root);
         binaryTree.levelOrderTraverse(binaryTree.root);
+        System.out.println("\nMax Value " + binaryTree.findMaxValue(binaryTree.root));
     }
 
     public void createTree() {
@@ -147,6 +148,16 @@ public class BinaryTree {
                 queue.offer(temp.right);
             }
         }
+    }
+
+    public int findMaxValue(TreeNode root) {
+        if (root == null) return Integer.MIN_VALUE;
+        int result = root.data;
+        int left = findMaxValue(root.left);
+        int right = findMaxValue(root.right);
+        if (result < left) result = left;
+        if (result < right) result = right;
+        return result;
     }
 
     private class TreeNode {
