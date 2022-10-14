@@ -8,13 +8,14 @@ public class KnightProblem {
         int col = 4;
         int move = 2;
         int[][] board = new int[row][col];
-        followKnight(board, 0, 0, move);
+        followKnight(board, 3, 2, move);
         System.out.println(count);
     }
 
     public static void followKnight(int[][] board, int x, int y, int move) {
         if (x < 0 || x == board.length || y < 0 || y == board[0].length) return;
         if (move == 0) {
+            System.out.println(x + "" + y);
             count++;
             return;
         }
