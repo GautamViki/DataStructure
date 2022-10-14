@@ -13,6 +13,14 @@ public class BSTree {
         bsTree.insertNode(6);
         bsTree.insertNode(8);
         bsTree.inOrderTraverse(bsTree.root);
+
+
+        TreeNode node = bsTree.searchKey(bsTree.root, 3);
+        if (node != null) {
+            System.out.println("\nKey Found !!");
+        } else {
+            System.out.println("\nKey not Found !!");
+        }
     }
 
     public void inOrderTraverse(TreeNode root) {
@@ -37,6 +45,15 @@ public class BSTree {
             root.right = insertNode(root.right, data);
         }
         return root;
+    }
+
+    public TreeNode searchKey(TreeNode root, int key) {
+        if (root == null || root.data == key) return root;
+        if (key < root.data) {
+            return searchKey(root.left, key);
+        } else {
+            return searchKey(root.right, key);
+        }
     }
 
     private class TreeNode {
