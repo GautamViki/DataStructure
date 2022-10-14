@@ -1,7 +1,5 @@
 package Recursion;
 
-import java.util.Arrays;
-
 public class NQueenProblem {
     static int count = 0;
 
