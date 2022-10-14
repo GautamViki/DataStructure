@@ -27,7 +27,6 @@ public class LinkedList {
     }
 
     public void printList() {
-
         Node current = head;
         while (current != null) {
             System.out.print(current.data + " => ");
@@ -95,7 +94,6 @@ public class LinkedList {
         current.next = node;
         printList();
     }
-    
 
     private static class Node {
         private int data;
@@ -106,6 +104,4 @@ public class LinkedList {
             this.next = null;
         }
     }
-
-
 }
