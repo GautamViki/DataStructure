@@ -6,21 +6,16 @@ public class NQueenProblem {
     static int count = 0;
 
     public static void main(String[] args) {
-        int n = 4;
+        int n = 5;
         int[][] board = new int[n][n];
-        for (int i = 0; i < n; i++) {
-//            Arrays.fill(board[i], 0);
-            System.out.print(Arrays.toString(board[i]));
-            System.out.println();
-        }
         System.out.println();
         nQueen(board, 0, "");
-        System.out.println(count);
+        System.out.println("\n" + count + "  Ways");
     }
 
     public static void nQueen(int[][] board, int row, String position) {
         if (row == board.length) {
-            System.out.println(position);
+            System.out.println("Indexes " + position);
             count++;
             return;
         }
