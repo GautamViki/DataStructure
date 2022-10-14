@@ -4,7 +4,22 @@ public class BSTree {
     private TreeNode root;
 
     public static void main(String[] args) {
+        BSTree bsTree = new BSTree();
+        bsTree.insertNode(5);
+        bsTree.insertNode(3);
+        bsTree.insertNode(7);
+        bsTree.insertNode(1);
+        bsTree.insertNode(4);
+        bsTree.insertNode(6);
+        bsTree.insertNode(8);
+        bsTree.inOrderTraverse(bsTree.root);
+    }
 
+    public void inOrderTraverse(TreeNode root) {
+        if (root == null) return;
+        inOrderTraverse(root.left);
+        System.out.print(root.data + " ");
+        inOrderTraverse(root.right);
     }
 
     public void insertNode(int data) {
