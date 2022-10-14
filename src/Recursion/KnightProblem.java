@@ -20,9 +20,8 @@ public class KnightProblem {
                     count++;
                 }
             }
-
         }
-        System.out.println(count);
+        System.out.println("\n" + count + " position");
     }
 
     public static void followKnight(int[][] board, int x, int y, int move) {
