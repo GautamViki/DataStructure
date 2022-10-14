@@ -6,14 +6,13 @@ public class KnightProblem {
 
 
     public static void main(String[] args) {
-        int row = 4;
-        int col = 4;
-        int move = 2;
+        int row = 10;
+        int col = 10;
         int[][] board = new int[row][col];
-        followKnight(board, 3, 2, move);
+        followKnight(board, 4, 7, 6);
         int count = 0;
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < row; i++) {
             System.out.println(Arrays.toString(board[i]));
             for (int j = 0; j < col; j++) {
                 if (board[i][j] == 1) {

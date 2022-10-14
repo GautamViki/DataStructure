@@ -16,6 +16,7 @@ public class BinaryTree {
         binaryTree.inOrderTraverseIteratively(binaryTree.root);
         System.out.println("\nPostOrder Traverse Recursive way");
         binaryTree.postOrderRecursively(binaryTree.root);
+        binaryTree.postOrderIteratively(binaryTree.root);
     }
 
     public void createTree() {
@@ -104,6 +105,7 @@ public class BinaryTree {
     }
 
     public void postOrderIteratively(TreeNode root) {
+        System.out.println("\nPostOrder Traverse Iteratively way");
         if (root == null) return;
         Stack<TreeNode> stack = new Stack<>();
         TreeNode current = root;
@@ -112,7 +114,17 @@ public class BinaryTree {
                 stack.push(current);
                 current = current.left;
             } else {
-
+                TreeNode temp = stack.peek().right;
+                if (temp == null) {
+                    temp = stack.pop();
+                    System.out.print(temp.data + " ");
+                    while (!stack.isEmpty() && temp == stack.peek().right) {
+                        temp = stack.pop();
+                        System.out.print(temp.data + " ");
+                    }
+                } else {
+                    current = temp;
+                }
             }
         }
     }
