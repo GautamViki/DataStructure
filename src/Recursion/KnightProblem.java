@@ -3,7 +3,7 @@ package Recursion;
 import java.util.Arrays;
 
 public class KnightProblem {
-    static int count = 0;
+
 
     public static void main(String[] args) {
         int row = 4;
@@ -11,10 +11,18 @@ public class KnightProblem {
         int move = 2;
         int[][] board = new int[row][col];
         followKnight(board, 3, 2, move);
-//        System.out.println(count);
+        int count = 0;
+
         for (int i = 0; i < 4; i++) {
             System.out.println(Arrays.toString(board[i]));
+            for (int j = 0; j < col; j++) {
+                if (board[i][j] == 1) {
+                    count++;
+                }
+            }
+
         }
+        System.out.println(count);
     }
 
     public static void followKnight(int[][] board, int x, int y, int move) {
