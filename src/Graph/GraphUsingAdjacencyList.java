@@ -17,11 +17,12 @@ public class GraphUsingAdjacencyList {
     }
 
     public static void main(String[] args) {
-        GraphUsingAdjacencyList graph = new GraphUsingAdjacencyList(4);
+        GraphUsingAdjacencyList graph = new GraphUsingAdjacencyList(5);
         graph.addEdge(0, 1);
         graph.addEdge(1, 2);
         graph.addEdge(2, 3);
-        graph.addEdge(3, 0);
+        graph.addEdge(3, 4);
+        graph.addEdge(4, 0);
         System.out.println(graph);
     }
 
@@ -31,6 +32,7 @@ public class GraphUsingAdjacencyList {
         edge++;
     }
 
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(vtx + " vertexes " + edge + " Edges \n");
