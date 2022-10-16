@@ -23,6 +23,7 @@ public class Graph {
         System.out.println(graph);
     }
 
+    @Override
     public String toString() {
         System.out.println(vtx + " Vertexes " + edge + " Edges\n");
         StringBuilder sb = new StringBuilder();
