@@ -1,21 +1,19 @@
 package Graph;
 
-import java.util.Arrays;
-
-public class Graph {
+public class GraphUsingAdjacencyMatrix {
     private int[][] adjMatrix;
     private int edge;
 
     private int vtx;
 
-    public Graph(int node) {
+    public GraphUsingAdjacencyMatrix(int node) {
         this.adjMatrix = new int[node][node];
         this.vtx = node;
         this.edge = 0;
     }
 
     public static void main(String[] args) {
-        Graph graph = new Graph(4);
+        GraphUsingAdjacencyMatrix graph = new GraphUsingAdjacencyMatrix(4);
         graph.addNode(0, 1);
         graph.addNode(1, 2);
         graph.addNode(2, 3);
