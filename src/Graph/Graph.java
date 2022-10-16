@@ -23,6 +23,17 @@ public class Graph {
         System.out.println(graph);
     }
 
+    public String toString() {
+        System.out.println(vtx + " Vertexes " + edge + " Edges\n");
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < vtx; i++) {
+            for (int v : adjMatrix[i]) {
+                sb.append(v + " ");
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
 
     public void addNode(int u, int v) {
         this.adjMatrix[u][v] = 1;
