@@ -22,6 +22,5 @@ public class InsertionSort {
         }
         System.out.println("Sorted Array");
         System.out.println(Arrays.toString(arr));
-
     }
 }
