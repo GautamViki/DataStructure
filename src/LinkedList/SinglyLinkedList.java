@@ -1,4 +1,4 @@
-package LinkedList.singlyList;
+package LinkedList;
 
 public class SinglyLinkedList {
     private LinkedList head;
@@ -78,6 +78,8 @@ public class SinglyLinkedList {
         //        reverse list
         sll.reverseList();
         System.out.println();
+
+        sll.deleteGivenKey(30);
     }
 
     public void printNode() {
@@ -170,6 +172,19 @@ public class SinglyLinkedList {
         printNode();
         System.out.println("Deleted data = " + after.data + "      position = " + pos);
         findSize();
+    }
+
+    public void deleteGivenKey(int key) {
+        System.out.println("Delete a given key \n");
+        LinkedList temp = null;
+        LinkedList current = head;
+        while (current != null && current.data != key) {
+            temp = current;
+            current = current.next;
+        }
+        if (current == null) return;
+        temp.next = current.next;
+        printNode();
     }
 
     public void searchNode(int data) {
