@@ -190,7 +190,7 @@ public class SinglyLinkedList {
     public void searchNode(int data) {
         LinkedList current = head;
         int idx = -1;
-        int count = 1;
+        int count = 0;
         while (current != null) {
             if (current.data == data) {
                 idx = count;
