@@ -19,6 +19,9 @@ public class InsertInSorted {
 
         insert.printNode();
         insert.insertSortedArray(35);
+        insert.insertSortedArray(35);
+        insert.insertSortedArray(20);
+        insert.removeDuplicate();
     }
 
     public void printNode() {
@@ -27,6 +30,7 @@ public class InsertInSorted {
             System.out.print(current.data + " ");
             current = current.next;
         }
+        System.out.println();
     }
 
     public void insertSortedArray(int data) {
@@ -40,6 +44,18 @@ public class InsertInSorted {
         LinkedList node = new LinkedList(data);
         node.next = current;
         temp.next = node;
+        printNode();
+    }
+
+    public void removeDuplicate() {
+        LinkedList current = head;
+        while (current != null && current.next != null) {
+            if (current.data == current.next.data) {
+                current.next = current.next.next;
+            } else {
+                current = current.next;
+            }
+        }
         printNode();
     }
 
