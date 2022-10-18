@@ -21,7 +21,9 @@ public class InsertInSorted {
         insert.insertSortedArray(35);
         insert.insertSortedArray(35);
         insert.insertSortedArray(20);
+        insert.printNode();
         insert.removeDuplicate();
+        insert.printNode();
     }
 
     public void printNode() {
@@ -34,7 +36,6 @@ public class InsertInSorted {
     }
 
     public void insertSortedArray(int data) {
-        System.out.println();
         LinkedList current = head;
         LinkedList temp = null;
         while (current != null && current.data < data) {
@@ -44,7 +45,6 @@ public class InsertInSorted {
         LinkedList node = new LinkedList(data);
         node.next = current;
         temp.next = node;
-        printNode();
     }
 
     public void removeDuplicate() {
@@ -56,7 +56,6 @@ public class InsertInSorted {
                 current = current.next;
             }
         }
-        printNode();
     }
 
     static class LinkedList {
