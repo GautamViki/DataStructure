@@ -25,8 +25,8 @@ public class DetectLoopInList {
         node8.next = node5;
 
         list.printList();
-        boolean isLoop = list.detectLoop();
-        System.out.println(isLoop);
+        System.out.println(list.detectLoop());
+        System.out.println(list.getStartPointOfLoop().data);
     }
 
     public void printList() {
@@ -54,6 +54,28 @@ public class DetectLoopInList {
             }
         }
         return false;
+    }
+
+    public ListNode getStartPointOfLoop() {
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) {
+                return findStartPoint(slow);
+            }
+        }
+        return null;
+    }
+
+    private ListNode findStartPoint(ListNode slow) {
+        ListNode temp = head;
+        while (temp != slow) {
+            temp = temp.next;
+            slow = slow.next;
+        }
+        return temp;
     }
 
     private static class ListNode {
