@@ -23,6 +23,7 @@ public class BSTree {
         }
     }
 
+    //
     public void inOrderTraverse(TreeNode root) {
         if (root == null) return;
         inOrderTraverse(root.left);
