@@ -7,7 +7,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         Student s1 = new Student(31, "Vikas", 79);
-        Student s2 = new Student(20, "Chandani", 80);
+        Student s2 = new Student(29, "Chandani", 80);
         Student s3 = new Student(21, "Brijesh", 69);
         Student s4 = new Student(26, "Anubhav", 72);
         Student s5 = new Student(34, "Shubham", 70);

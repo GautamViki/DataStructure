@@ -25,10 +25,6 @@ public class Movies implements Comparable<Movies> {
         return name;
     }
 
-    public String toString() {
-        return "\n Year : " + getYear() + " Name : " + getName() + " Rating : " + getRating() + "\n";
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

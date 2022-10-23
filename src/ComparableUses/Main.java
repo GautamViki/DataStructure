@@ -25,14 +25,18 @@ public class Main {
 
 //        System.out.println(movies);
         Collections.sort(movies);
-        System.out.println("========================================");
-        System.out.println(movies);
+        System.out.println("========================================\nSorting");
+        for (Movies m : movies) {
+            System.out.println("Rating : " + m.getRating() + " Year : " + m.getYear() + " Name : " + m.getName());
+        }
         System.out.println("Size of list : " + movies.size());
         System.out.println();
-        System.out.println("========================================");
+        System.out.println("========================================\nRemove Duplicate");
         Set<Movies> set = new HashSet<>();
         set.addAll(movies);
-        System.out.println(set);
+        for (Movies m : set) {
+            System.out.println("Rating : " + m.getRating() + " Year : " + m.getYear() + " Name : " + m.getName());
+        }
         System.out.println("Size of set : " + set.size());
     }
 }
