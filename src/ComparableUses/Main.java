@@ -23,7 +23,6 @@ public class Main {
         movies.add(m7);
         movies.add(m8);
 
-//        System.out.println(movies);
         Collections.sort(movies);
         System.out.println("========================================\nSorting");
         for (Movies m : movies) {
