@@ -2,6 +2,7 @@ package Java8Feature;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 public class StreamOnObjects {
@@ -58,5 +59,15 @@ public class StreamOnObjects {
                 })
                 .get();
         System.out.println("Minimum by age=>roll   \n" + min);
+
+        Student max = students.stream().max((i1, i2) -> {
+                    if (i1.getAge().compareTo(i2.getAge()) == 0) {
+                        return i1.getRoll() - i2.getRoll();
+                    } else return i1.getAge().compareTo(i2.getAge());
+                })
+                .get();
+        System.out.println("Maximum by age=>roll\n" + max);
+
+        students.stream().forEach(i -> System.out.println(i.getName() + "  " + i.getAddress()));
     }
 }
