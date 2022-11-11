@@ -35,8 +35,8 @@ public class StreamOnObjects {
                     if (i1.getName().compareTo(i2.getName()) > 0) return 1;
                     else if (i1.getName().compareTo(i2.getName()) < 0) return -1;
                     else {
-                        if (i1.getAge() - i2.getAge() > 0) return 1;
-                        else if (i1.getAge() - i2.getAge() < 0) return -1;
+                        if (i1.getAge() - i2.getAge() > 0) return -1;
+                        else if (i1.getAge() - i2.getAge() < 0) return 1;
                         else {
                             return i1.getRoll() - i2.getRoll();
                         }
@@ -45,5 +45,18 @@ public class StreamOnObjects {
                 .collect(Collectors.toList());
         System.out.println(ageMap);
 
+        System.out.println("==========================================================\n"
+                + "filter by roll < 40 / count");
+        long count = students.stream().filter(i -> i.getRoll() < 40).count();
+        System.out.println("count   " + count);
+
+        System.out.println(students);
+        Student min = students.stream().min((i1, i2) -> {
+                    if (i1.getAge().compareTo(i2.getAge()) == 0) {
+                        return i1.getRoll() - i2.getRoll();
+                    } else return i1.getAge().compareTo(i2.getAge());
+                })
+                .get();
+        System.out.println("Minimum by age=>roll   \n" + min);
     }
 }
