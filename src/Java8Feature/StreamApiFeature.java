@@ -40,7 +40,8 @@ public class StreamApiFeature {
 
         Integer max = list.stream().max((i1, i2) -> i1.compareTo(i2)).get();
         System.out.println("Maximum value  " + max);
-       
+
+        list.stream().sorted().forEach(i -> System.out.print(i + "  "));
     }
 }
 
