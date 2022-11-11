@@ -44,27 +44,37 @@ public class StreamApiFeature {
         students.add(new Student(10, "Vikas", "Lucknow", 27));
         students.add(new Student(60, "Brijesh", "Gajipur", 25));
         students.add(new Student(70, "Chandni", "Gorakhpur", 26));
-        students.add(new Student(50, "Anubhav", "Kanpur", 22));
+        students.add(new Student(50, "Vikas", "Kanpur", 24));
         students.add(new Student(30, "Shivani", "Bihar", 23));
         students.add(new Student(20, "Anshul", "Allahabad", 26));
 
         System.out.println(students);
-        System.out.println("=========================================================================\nFilter by age");
+        System.out.println("=========================================================================\nFilter by age and Sort by age");
         List<Student> ageFilter = students.stream()
                 .filter(i -> i.getAge() > 23)
                 .sorted((i1, i2) -> (i1.getAge() > i2.getAge() ? -1 : (i1.getAge() < i2.getAge() ? 1 : i1.getRoll().compareTo(i2.getRoll()))))
                 .collect(Collectors.toList());
         System.out.println(ageFilter);
 
-        System.out.println("=========================================================================\nMap by age");
+        System.out.println("=========================================================================\nfilter by age > 23 / Map by age - 10 / sort by name");
         List<Student> ageMap = students.stream()
                 .filter(i -> i.getAge() > 23)
                 .map(i -> {
                     i.setAge(i.getAge() - 10);
                     return i;
                 })
+                .sorted((i1, i2) -> {
+                    if (i1.getName().compareTo(i2.getName()) > 0) {
+                        return 1;
+                    } else if (i1.getName().compareTo(i2.getName()) < 0) {
+                        return -1;
+                    } else {
+                        return i1.getAge() - i2.getAge();
+                    }
+                })
                 .collect(Collectors.toList());
         System.out.println(ageMap);
+        
     }
 }
 
