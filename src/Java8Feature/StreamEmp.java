@@ -30,6 +30,10 @@ public class StreamEmp {
         System.out.println("\nMap by Salary if salary<10000=>salary+2000");
         System.out.println(mapBySalary);
 
-      
+        Long count = employees.stream().filter(i -> i.getEmpId() > 400).count();
+        System.out.println("\nCount f Id>400");
+        System.out.println(count);
+
+
     }
 }
