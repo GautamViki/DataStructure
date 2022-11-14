@@ -34,6 +34,10 @@ public class StreamEmp {
         System.out.println("\nCount f Id>400");
         System.out.println(count);
 
+        Employee minEmp = employees.stream().min((i1, i2) -> i1.getSalary() - i2.getSalary()).get();
+        System.out.println("\nMin employee by Salary");
+        System.out.println(minEmp);
+
 
     }
 }
