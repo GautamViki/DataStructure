@@ -59,6 +59,12 @@ public class StreamEmp {
         System.out.println("\nSort by salary");
         System.out.println(sortSalary);
 
+        List<Employee> sortByName = employees.stream()
+                .sorted((i1, i2) -> i1.getEmpName().compareTo(i2.getEmpName()))
+                .collect(Collectors.toList());
+        System.out.println("\nSort by Name");
+        System.out.println(sortByName);
+
 
     }
 }
