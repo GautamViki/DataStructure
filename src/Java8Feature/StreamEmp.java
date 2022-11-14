@@ -38,6 +38,10 @@ public class StreamEmp {
         System.out.println("\nMin employee by Salary");
         System.out.println(minEmp);
 
+        Employee maxEmp = employees.stream().max((i1, i2) -> i1.getSalary() - i2.getSalary()).get();
+        System.out.println("\nMax employee by salary");
+        System.out.println(maxEmp);
+
 
     }
 }
