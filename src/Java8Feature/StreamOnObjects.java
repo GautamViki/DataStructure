@@ -2,7 +2,6 @@ package Java8Feature;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 public class StreamOnObjects {
@@ -38,9 +37,7 @@ public class StreamOnObjects {
                     else {
                         if (i1.getAge() - i2.getAge() > 0) return -1;
                         else if (i1.getAge() - i2.getAge() < 0) return 1;
-                        else {
-                            return i1.getRoll() - i2.getRoll();
-                        }
+                        else return i1.getRoll() - i2.getRoll();
                     }
                 })
                 .collect(Collectors.toList());
