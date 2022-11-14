@@ -52,6 +52,13 @@ public class StreamEmp {
         System.out.println("\nFilter by salary<=10000 and Map by company + tech");
         System.out.println(filterMap);
 
+        System.out.println(employees);
+
+        List<Employee> sortSalary = employees.stream().sorted((i1, i2) -> i1.getSalary() - i2.getSalary())
+                .collect(Collectors.toList());
+        System.out.println("\nSort by salary");
+        System.out.println(sortSalary);
+
 
     }
 }
