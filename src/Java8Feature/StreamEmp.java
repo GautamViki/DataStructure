@@ -42,6 +42,16 @@ public class StreamEmp {
         System.out.println("\nMax employee by salary");
         System.out.println(maxEmp);
 
+        List<Employee> filterMap = employees.stream()
+                .filter(i -> i.getSalary() <= 10000)
+                .map(i -> {
+                    i.setCompany(i.getCompany() + " tech");
+                    return i;
+                })
+                .collect(Collectors.toList());
+        System.out.println("\nFilter by salary<=10000 and Map by company + tech");
+        System.out.println(filterMap);
+
 
     }
 }
