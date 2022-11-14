@@ -21,6 +21,15 @@ public class StreamEmp {
         System.out.println("\nFilter by salary<=10000");
         System.out.println(filterBySalary);
 
+        List<Employee> mapBySalary = employees.stream().map(i -> {
+            if (i.getSalary() < 10000) {
+                i.setSalary(i.getSalary() + 2000);
+            }
+            return i;
+        }).collect(Collectors.toList());
+        System.out.println("\nMap by Salary if salary<10000=>salary+2000");
+        System.out.println(mapBySalary);
 
+      
     }
 }
